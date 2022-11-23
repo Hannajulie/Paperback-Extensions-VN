@@ -602,7 +602,7 @@ exports.qMangaInfo = {
     author: 'JustaTama',
     authorWebsite: 'https://github.com/JustaTama',
     description: 'Extension that pulls manga from qManga',
-    websiteBaseURL: `https://qmanga4.com/`,
+    websiteBaseURL: `https://qmanga4.net/`,
     contentRating: paperback_extensions_common_1.ContentRating.MATURE,
     sourceTags: [
         {
@@ -621,7 +621,7 @@ class qManga extends paperback_extensions_common_1.Source {
                 interceptRequest: (request) => __awaiter(this, void 0, void 0, function* () {
                     var _a;
                     request.headers = Object.assign(Object.assign({}, ((_a = request.headers) !== null && _a !== void 0 ? _a : {})), {
-                        'referer': 'https://qmanga4.com/'
+                        'referer': 'https://qmanga4.net/'
                     });
                     return request;
                 }),
@@ -749,7 +749,7 @@ class qManga extends paperback_extensions_common_1.Source {
             sectionCallback(view);
             //New Updates
             let request = createRequestObject({
-                url: 'https://qmanga4.com/de-nghi/pho-bien/moi-nhat',
+                url: 'https://qmanga4.net/de-nghi/pho-bien/moi-nhat',
                 method: "GET",
             });
             let data = yield this.requestManager.schedule(request, 1);
@@ -762,7 +762,7 @@ class qManga extends paperback_extensions_common_1.Source {
                 let subtitle = $(`.chapter-commic-tab > a`, element).text().trim();
                 newUpdatedItems.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: qMangaParser_1.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                    image: qMangaParser_1.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                     title: createIconText({ text: title }),
                     subtitleText: createIconText({ text: subtitle }),
                 }));
@@ -771,7 +771,7 @@ class qManga extends paperback_extensions_common_1.Source {
             sectionCallback(newUpdated);
             //hot
             request = createRequestObject({
-                url: 'https://qmanga4.com/danh-muc/noi-bat',
+                url: 'https://qmanga4.net/danh-muc/noi-bat',
                 method: "GET",
             });
             let hotItems = [];
@@ -784,7 +784,7 @@ class qManga extends paperback_extensions_common_1.Source {
                 let subtitle = $(`.chapter-commic-tab > a`, element).text().trim();
                 hotItems.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: qMangaParser_1.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                    image: qMangaParser_1.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                     title: createIconText({ text: title }),
                     subtitleText: createIconText({ text: subtitle }),
                 }));
@@ -793,7 +793,7 @@ class qManga extends paperback_extensions_common_1.Source {
             sectionCallback(hot);
             //view
             request = createRequestObject({
-                url: 'https://qmanga4.com/danh-muc/pho-bien',
+                url: 'https://qmanga4.net/danh-muc/pho-bien',
                 method: "GET",
             });
             let viewItems = [];
@@ -806,7 +806,7 @@ class qManga extends paperback_extensions_common_1.Source {
                 let subtitle = $(`.chapter-commic-tab > a`, element).text().trim();
                 viewItems.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: qMangaParser_1.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                    image: qMangaParser_1.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                     title: createIconText({ text: title }),
                     subtitleText: createIconText({ text: subtitle }),
                 }));
@@ -815,7 +815,7 @@ class qManga extends paperback_extensions_common_1.Source {
             sectionCallback(view);
             //featured
             request = createRequestObject({
-                url: 'https://qmanga4.com/',
+                url: 'https://qmanga4.net/',
                 method: "GET",
             });
             let featuredItems = [];
@@ -828,7 +828,7 @@ class qManga extends paperback_extensions_common_1.Source {
                 // let subtitle = $(`.chapter-commic-tab > a`, element).text().trim();
                 featuredItems.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: qMangaParser_1.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                    image: qMangaParser_1.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                     title: createIconText({ text: title !== null && title !== void 0 ? title : "" }),
                 }));
             }
@@ -844,15 +844,15 @@ class qManga extends paperback_extensions_common_1.Source {
             let select = 1;
             switch (homepageSectionId) {
                 case "new_updated":
-                    url = `https://qmanga4.com/de-nghi/pho-bien/moi-nhat?page=${page}`;
+                    url = `https://qmanga4.net/de-nghi/pho-bien/moi-nhat?page=${page}`;
                     select = 1;
                     break;
                 case "hot":
-                    url = `https://qmanga4.com/danh-muc/noi-bat?page=${page}`;
+                    url = `https://qmanga4.net/danh-muc/noi-bat?page=${page}`;
                     select = 2;
                     break;
                 case "view":
-                    url = `https://qmanga4.com/danh-muc/pho-bien?page=${page}`;
+                    url = `https://qmanga4.net/danh-muc/pho-bien?page=${page}`;
                     select = 3;
                     break;
                 default:
@@ -904,9 +904,9 @@ class qManga extends paperback_extensions_common_1.Source {
                 }
             });
             const request = createRequestObject({
-                url: query.title ? encodeURI(`https://qmanga4.com/tim-kiem?q=${query.title}&page=${page}`) :
+                url: query.title ? encodeURI(`https://qmanga4.net/tim-kiem?q=${query.title}&page=${page}`) :
                     (tags[0].includes('http') ? (tags[0] + `?page=${page}`) :
-                        encodeURI(`https://qmanga4.com/danh-muc/${search.cate}?page=${page}`)),
+                        encodeURI(`https://qmanga4.net/danh-muc/${search.cate}?page=${page}`)),
                 method: "GET",
             });
             let data = yield this.requestManager.schedule(request, 1);
@@ -925,15 +925,15 @@ class qManga extends paperback_extensions_common_1.Source {
             const tags = [];
             const tags2 = [
                 {
-                    id: 'https://qmanga4.com/bang-xep-hang/top-ngay',
+                    id: 'https://qmanga4.net/bang-xep-hang/top-ngay',
                     label: 'Top ngày'
                 },
                 {
-                    id: 'https://qmanga4.com/bang-xep-hang/top-tuan',
+                    id: 'https://qmanga4.net/bang-xep-hang/top-tuan',
                     label: 'Top tuần'
                 },
                 {
-                    id: 'https://qmanga4.com/bang-xep-hang/top-thang',
+                    id: 'https://qmanga4.net/bang-xep-hang/top-thang',
                     label: 'Top tháng'
                 }
             ];
@@ -965,7 +965,7 @@ class qManga extends paperback_extensions_common_1.Source {
                     label: 'Cũ nhất'
                 }
             ];
-            const url = `https://qmanga4.com/`;
+            const url = `https://qmanga4.net/`;
             const request = createRequestObject({
                 url: url,
                 method: "GET",
@@ -1010,14 +1010,14 @@ exports.parseSearch = ($, query, tags) => {
         if (tags[0].includes('http')) {
             for (const element of $('li', '.detail-bxh-ul').toArray()) {
                 let title = $('.title-commic-tab', element).text().trim();
-                let image = (_a = $('.image-commic-bxh img', element).attr('data-src')) !== null && _a !== void 0 ? _a : "https://qmanga4.com/image/defaul-load.png";
+                let image = (_a = $('.image-commic-bxh img', element).attr('data-src')) !== null && _a !== void 0 ? _a : "https://qmanga4.net/image/defaul-load.png";
                 let id = $('.image-commic-bxh > a', element).first().attr('href');
                 let subtitle = $(`.chapter-commic-tab > a`, element).text().trim();
                 if (title === '')
                     continue;
                 manga.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                    image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                     title: createIconText({ text: title }),
                     subtitleText: createIconText({ text: subtitle }),
                 }));
@@ -1026,14 +1026,14 @@ exports.parseSearch = ($, query, tags) => {
         else {
             for (const element of $('li', '.content-tab').toArray()) {
                 let title = $('.title-commic-tab', element).text().trim();
-                let image = (_b = $('.image-commic-tab img', element).attr('data-src')) !== null && _b !== void 0 ? _b : "https://qmanga4.com/image/defaul-load.png";
+                let image = (_b = $('.image-commic-tab img', element).attr('data-src')) !== null && _b !== void 0 ? _b : "https://qmanga4.net/image/defaul-load.png";
                 let id = $('.image-commic-tab > a', element).first().attr('href');
                 let subtitle = $(`.chapter-commic-tab > a`, element).text().trim();
                 if (title === '')
                     continue;
                 manga.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                    image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                     title: createIconText({ text: title }),
                     subtitleText: createIconText({ text: subtitle }),
                 }));
@@ -1050,7 +1050,7 @@ exports.parseSearch = ($, query, tags) => {
                 continue;
             manga.push(createMangaTile({
                 id: id !== null && id !== void 0 ? id : "",
-                image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                 title: createIconText({ text: title }),
                 subtitleText: createIconText({ text: subtitle }),
             }));
@@ -1071,7 +1071,7 @@ exports.parseViewMore = ($, select) => {
                 continue;
             manga.push(createMangaTile({
                 id: id !== null && id !== void 0 ? id : "",
-                image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                 title: createIconText({ text: title }),
                 subtitleText: createIconText({ text: subtitle }),
             }));
@@ -1087,7 +1087,7 @@ exports.parseViewMore = ($, select) => {
                 continue;
             manga.push(createMangaTile({
                 id: id !== null && id !== void 0 ? id : "",
-                image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.com/image/defaul-load.png")),
+                image: exports.decodeHTMLEntity(encodeURI(image !== null && image !== void 0 ? image : "https://qmanga4.net/image/defaul-load.png")),
                 title: createIconText({ text: title }),
                 subtitleText: createIconText({ text: subtitle }),
             }));
