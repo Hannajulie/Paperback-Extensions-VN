@@ -594,7 +594,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Baotangtruyentranh = exports.BaotangtruyentranhInfo = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const BaotangtruyentranhParser_1 = require("./BaotangtruyentranhParser");
-const DOMAIN = 'https://baotangtruyenhay.com/';
+const DOMAIN = 'https://baotangtruyennet.com/';
 const method = 'GET';
 exports.BaotangtruyentranhInfo = {
     version: '1.0.1',
@@ -785,7 +785,7 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
             ///Get the section dat
             //New Updates
             let request = createRequestObject({
-                url: 'https://baotangtruyenhay.com/?page=1&typegroup=0',
+                url: 'https://baotangtruyennet.com/?page=1&typegroup=0',
                 method: "GET",
             });
             let data = yield this.requestManager.schedule(request, 1);
@@ -829,7 +829,7 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
             sectionCallback(featured);
             //trans
             request = createRequestObject({
-                url: 'https://baotangtruyenhay.com/?page=1&typegroup=1',
+                url: 'https://baotangtruyennet.com/?page=1&typegroup=1',
                 method: "GET",
             });
             let transItems = [];
@@ -859,11 +859,11 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
             let select = 1;
             switch (homepageSectionId) {
                 case "new_updated":
-                    url = `https://baotangtruyenhay.com/?page=${page}&typegroup=0`;
+                    url = `https://baotangtruyennet.com/?page=${page}&typegroup=0`;
                     select = 1;
                     break;
                 case "trans":
-                    url = `https://baotangtruyenhay.com/?page=${page}&typegroup=1`;
+                    url = `https://baotangtruyennet.com/?page=${page}&typegroup=1`;
                     select = 1;
                     break;
                 default:
@@ -907,8 +907,8 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
                 }
             });
             const request = createRequestObject({
-                url: query.title ? encodeURI(`https://baotangtruyenhay.com/tim-truyen?keyword=${query.title}&page=${page}`)
-                    : encodeURI(`https://baotangtruyenhay.com/tim-truyen/${search.cate}?status=${search.status}&sort=${search.sort}&page=${page}`),
+                url: query.title ? encodeURI(`https://baotangtruyennet.com/tim-truyen?keyword=${query.title}&page=${page}`)
+                    : encodeURI(`https://baotangtruyennet.com/tim-truyen/${search.cate}?status=${search.status}&sort=${search.sort}&page=${page}`),
                 method: "GET",
             });
             let data = yield this.requestManager.schedule(request, 1);
